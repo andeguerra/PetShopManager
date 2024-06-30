@@ -86,7 +86,6 @@
             this.txtUsuario.Size = new System.Drawing.Size(373, 35);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.roundTextBox1_TextChanged_2);
             // 
             // FrmLogin
             // 

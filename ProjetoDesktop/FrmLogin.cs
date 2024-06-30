@@ -22,31 +22,6 @@ namespace ProjetoDesktop
 
         }
 
-        private void roundTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundedTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundedTextBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundTextBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void roundTextBox1_TextChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
         private void roundedButton1_Click(object sender, EventArgs e)
         {
 
