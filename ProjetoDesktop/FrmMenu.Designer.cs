@@ -45,10 +45,8 @@
             this.pnCentral = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tmrSidebar = new System.Windows.Forms.Timer(this.components);
-            this.roundedStrokeTextBox1 = new RoundedStrokeTextBox();
             this.pnlSidebar.SuspendLayout();
             this.pnCentral.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidebar
@@ -276,7 +274,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel4.Controls.Add(this.roundedStrokeTextBox1);
             this.panel4.Location = new System.Drawing.Point(16, 15);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(970, 680);
@@ -286,14 +283,6 @@
             // 
             this.tmrSidebar.Interval = 10;
             this.tmrSidebar.Tick += new System.EventHandler(this.tmrSidebar_Tick);
-            // 
-            // roundedStrokeTextBox1
-            // 
-            this.roundedStrokeTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.roundedStrokeTextBox1.Location = new System.Drawing.Point(117, 75);
-            this.roundedStrokeTextBox1.Name = "roundedStrokeTextBox1";
-            this.roundedStrokeTextBox1.Size = new System.Drawing.Size(100, 14);
-            this.roundedStrokeTextBox1.TabIndex = 0;
             // 
             // FrmMenu
             // 
@@ -311,8 +300,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlSidebar.ResumeLayout(false);
             this.pnCentral.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -334,7 +321,6 @@
         private System.Windows.Forms.Panel pnlWhiteForm;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel pnCentral;
-        private RoundedStrokeTextBox roundedStrokeTextBox1;
     }
 }
 
