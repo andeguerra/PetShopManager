@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoDesktop
@@ -14,6 +9,8 @@ namespace ProjetoDesktop
     {
         private Button btnAtual;
         private Form formAtual;
+        private Dictionary<string, Form> formCache = new Dictionary<string, Form>();
+
         public FrmCadClient()
         {
             InitializeComponent();
@@ -52,17 +49,25 @@ namespace ProjetoDesktop
 
         private void AbrirForm(Form formsel, object btnSender)
         {
-            //formAtual?.Hide();
+            formAtual?.Hide();
 
             AtivarBtn(btnSender);
-            formAtual = formsel;
-            formsel.TopLevel = false;
-            formsel.FormBorderStyle = FormBorderStyle.None;
-            formsel.Dock = DockStyle.Fill;
-            this.pnCadClient.Controls.Add(formsel);
-            this.pnCadClient.Tag = formsel;
-            formsel.BringToFront();
-            formsel.Show();
+
+            string formKey = formsel.GetType().Name;
+
+            if (!formCache.ContainsKey(formKey))
+            {
+                formsel.TopLevel = false;
+                formsel.FormBorderStyle = FormBorderStyle.None;
+                formsel.Dock = DockStyle.Fill;
+                this.pnCadClient.Controls.Add(formsel);
+                this.pnCadClient.Tag = formsel;
+                formCache[formKey] = formsel;
+            }
+
+            formAtual = formCache[formKey];
+            formAtual.BringToFront();
+            formAtual.Show();
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
@@ -88,11 +93,10 @@ namespace ProjetoDesktop
 
         private void FrmCadClient_Load(object sender, EventArgs e)
         {
-            AbrirForm(new FrmDadosBasicos(), btnCadastro);
-
             btnAtual = btnCadastro;
             btnAtual.Size = new Size(149, 35); // Define o tamanho desejado para o botão atual
-            pnSelecionado.Location = new Point(btnAtual.Location.X, 54);  
+            pnSelecionado.Location = new Point(btnAtual.Location.X, 54);
+            AbrirForm(new FrmDadosBasicos(), btnCadastro);
         }
     }
 }
