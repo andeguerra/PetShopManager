@@ -26,5 +26,10 @@ namespace ProjetoDesktop
         {
 
         }
+
+        private void PetsCadastrados_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
