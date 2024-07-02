@@ -106,5 +106,22 @@ namespace ProjetoDesktop
             btnAtual.Size = new Size(149, 35);
             pnSelecionado.Location = new Point(btnAtual.Location.X, 54);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            var dialogRes = MessageBox.Show("Deseja cancelar o cadastro?",
+                "Cancelar cdastro",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (dialogRes == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

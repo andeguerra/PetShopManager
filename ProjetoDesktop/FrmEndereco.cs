@@ -37,7 +37,16 @@ namespace ProjetoDesktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            
+            string cep = mskCep.Text;
+            string logradouro = txtLogradouro.Text;
+            string numero = txtNumero.Text;
+            string uf = txtUf.Text;
+            string cidade = txtCidade.Text;
+            string bairro = txtBairro.Text;
+            string complemento = txtComplemento.Text;
+            string obs = txtObs.Text;
+
+
         }
 
         public static async Task<Endereco> ObterEnderecoPorCep(string cep)
@@ -126,6 +135,14 @@ namespace ProjetoDesktop
                 {
                     MessageBox.Show("Por favor, insira um CEP.");
                 }
+            }
+        }
+
+        private void mskCep_Click(object sender, EventArgs e)
+        {
+            if(mskCep.Text.Where(char.IsDigit).ToArray().Length < 1)
+            {
+                mskCep.SelectionStart = 0;
             }
         }
     }
