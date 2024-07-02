@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,16 @@ namespace ProjetoDesktop
     public partial class FrmDadosBasicos : Form
     {
         private FrmCadClient parentForm;
+
+        public string Pessoa { get; private set; }
+        public string Situação { get; private set; }
+        public string ICMS { get; private set; }
+        public DateTime Data { get; private set; }
+        public string Nome { get; private set; }
+        public string CPF { get; private set; }
+        public string RG { get; private set; }
+        public string ObsDadosBasicos { get; private set; }
+
 
         public FrmDadosBasicos(FrmCadClient parent)
         {
@@ -30,6 +41,25 @@ namespace ProjetoDesktop
             {
                 parentForm.Close();
             }
+        }
+
+        public bool ValidarDados()
+        {
+            if (string.IsNullOrWhiteSpace(txtNome.Text) || string.IsNullOrWhiteSpace(txtCPF.Text))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos obrigatórios.");
+                return false;
+            }
+
+            Pessoa = cbPessoa.SelectedValue.ToString();
+            Situação = cbPessoa.SelectedValue.ToString();
+            ICMS = cbICMS.SelectedValue.ToString();
+            Data = dtpData.Value;
+            Nome = txtNome.Text;
+            CPF = txtCPF.Text;
+            RG = txtRG.Text;
+            ObsDadosBasicos = txtObs.Text;
+            return true;
         }
     }
 }

@@ -28,44 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtSite = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mskCel1 = new System.Windows.Forms.MaskedTextBox();
+            this.mskCel2 = new System.Windows.Forms.MaskedTextBox();
+            this.mskTelRes = new System.Windows.Forms.MaskedTextBox();
+            this.mskTelCom = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(563, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(283, 25);
-            this.textBox2.TabIndex = 25;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(59, 92);
-            this.textBox1.MaximumSize = new System.Drawing.Size(215, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 25);
-            this.textBox1.TabIndex = 24;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(563, 92);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(283, 25);
+            this.txtEmail.TabIndex = 25;
             // 
             // label6
             // 
@@ -89,17 +78,6 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Celular 1";
             // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(316, 92);
-            this.textBox4.MaximumSize = new System.Drawing.Size(215, 25);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(188, 25);
-            this.textBox4.TabIndex = 28;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -109,17 +87,6 @@
             this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 27;
             this.label1.Text = "Celular 2";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(316, 184);
-            this.textBox3.MaximumSize = new System.Drawing.Size(215, 25);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(188, 25);
-            this.textBox3.TabIndex = 32;
             // 
             // label2
             // 
@@ -131,17 +98,6 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "Telefone Comercial";
             // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(59, 184);
-            this.textBox5.MaximumSize = new System.Drawing.Size(215, 25);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(188, 25);
-            this.textBox5.TabIndex = 30;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -152,15 +108,15 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "Telefone Residêncial";
             // 
-            // textBox6
+            // txtSite
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSite.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(563, 184);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(283, 25);
-            this.textBox6.TabIndex = 34;
+            this.txtSite.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSite.Location = new System.Drawing.Point(563, 184);
+            this.txtSite.Name = "txtSite";
+            this.txtSite.Size = new System.Drawing.Size(283, 25);
+            this.txtSite.TabIndex = 34;
             // 
             // label4
             // 
@@ -174,15 +130,15 @@
             this.label4.TabIndex = 33;
             this.label4.Text = "Site";
             // 
-            // textBox7
+            // txtObs
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtObs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Location = new System.Drawing.Point(59, 270);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(787, 104);
-            this.textBox7.TabIndex = 36;
+            this.txtObs.Location = new System.Drawing.Point(59, 270);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(787, 104);
+            this.txtObs.TabIndex = 36;
             // 
             // label8
             // 
@@ -198,24 +154,60 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.mskTelCom);
+            this.panel1.Controls.Add(this.mskTelRes);
+            this.panel1.Controls.Add(this.mskCel2);
+            this.panel1.Controls.Add(this.mskCel1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.txtObs);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtSite);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox5);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(899, 412);
             this.panel1.TabIndex = 39;
+            // 
+            // mskCel1
+            // 
+            this.mskCel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskCel1.Location = new System.Drawing.Point(59, 96);
+            this.mskCel1.Mask = "(99) 0 0000-0000";
+            this.mskCel1.Name = "mskCel1";
+            this.mskCel1.Size = new System.Drawing.Size(188, 25);
+            this.mskCel1.TabIndex = 37;
+            // 
+            // mskCel2
+            // 
+            this.mskCel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskCel2.Location = new System.Drawing.Point(316, 96);
+            this.mskCel2.Mask = "(99) 0 0000-0000";
+            this.mskCel2.Name = "mskCel2";
+            this.mskCel2.Size = new System.Drawing.Size(188, 25);
+            this.mskCel2.TabIndex = 38;
+            // 
+            // mskTelRes
+            // 
+            this.mskTelRes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskTelRes.Location = new System.Drawing.Point(59, 184);
+            this.mskTelRes.Mask = "(99) 0 0000-0000";
+            this.mskTelRes.Name = "mskTelRes";
+            this.mskTelRes.Size = new System.Drawing.Size(188, 25);
+            this.mskTelRes.TabIndex = 39;
+            // 
+            // mskTelCom
+            // 
+            this.mskTelCom.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskTelCom.Location = new System.Drawing.Point(316, 184);
+            this.mskTelCom.Mask = "(99) 0 0000-0000";
+            this.mskTelCom.Name = "mskTelCom";
+            this.mskTelCom.Size = new System.Drawing.Size(188, 25);
+            this.mskTelCom.TabIndex = 40;
             // 
             // FrmContatos
             // 
@@ -236,20 +228,20 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtSite;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MaskedTextBox mskCel2;
+        private System.Windows.Forms.MaskedTextBox mskCel1;
+        private System.Windows.Forms.MaskedTextBox mskTelCom;
+        private System.Windows.Forms.MaskedTextBox mskTelRes;
     }
 }

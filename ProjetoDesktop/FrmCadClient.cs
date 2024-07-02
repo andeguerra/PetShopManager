@@ -121,7 +121,52 @@ namespace ProjetoDesktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            bool dadosBasicosValidos = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).ValidarDados();
+            bool enderecoValido = ((FrmEndereco)formsCache["FrmEndereco"]).ValidarDados();
+            bool contatosValidos = ((FrmContatos)formsCache["FrmContatos"]).ValidarDados();
 
+            if (dadosBasicosValidos && enderecoValido && contatosValidos)
+            {
+                // Aqui você pode acessar os dados de cada formulário
+                string pessoa = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).Pessoa;
+                string situacao = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).Situação;
+                string icms = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).ICMS;
+                DateTime data = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).Data;
+                string nome = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).Nome;
+                string cpf = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).CPF;
+                string rg = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).RG;
+                string obsDados = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).ObsDadosBasicos;
+
+                string cep = ((FrmEndereco)formsCache["FrmEndereco"]).Cep;
+                string logradouro = ((FrmEndereco)formsCache["FrmEndereco"]).Logradouro;
+                string numero = ((FrmEndereco)formsCache["FrmEndereco"]).Numero;
+                string uf = ((FrmEndereco)formsCache["FrmEndereco"]).UF;
+                string cidade = ((FrmEndereco)formsCache["FrmEndereco"]).Cidade;
+                string bairro = ((FrmEndereco)formsCache["FrmEndereco"]).Bairro;
+                string complemento = ((FrmEndereco)formsCache["FrmEndereco"]).Complemento;
+                string obsEndereco = ((FrmEndereco)formsCache["FrmEndereco"]).ObsEndereco;
+
+                string celular1 = ((FrmContatos)formsCache["FrmContatos"]).Celular1;
+                string celular2 = ((FrmContatos)formsCache["FrmContatos"]).Celular2;
+                string email = ((FrmContatos)formsCache["FrmContatos"]).Email;
+                string telRes = ((FrmContatos)formsCache["FrmContatos"]).TelefoneRes;
+                string telCom = ((FrmContatos)formsCache["FrmContatos"]).TelefoneCom;
+                string site = ((FrmContatos)formsCache["FrmContatos"]).SiteUrl;
+                string obsContato = ((FrmContatos)formsCache["FrmContatos"]).ObsContato;
+
+                // Aqui você pode executar a instrução SQL de insert com os dados obtidos
+                // Exemplo:
+                // string query = $"INSERT INTO Tabela (Nome, Idade, Rua, Cidade, Telefone, Email) " +
+                //                $"VALUES ('{nomeCliente}', {idadeCliente}, '{rua}', '{cidade}', " +
+                //                $"'{telefone}', '{email}')";
+                // Execute a query no seu banco de dados
+
+                MessageBox.Show("Dados salvos com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, preencha todos os campos corretamente.");
+            }
         }
     }
 }

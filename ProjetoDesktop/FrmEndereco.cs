@@ -11,12 +11,21 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Net.Http;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProjetoDesktop
 {
     public partial class FrmEndereco : Form
     {
         private FrmCadClient parentForm;
+        public string Cep { get; private set; }
+        public string Logradouro { get; private set; }
+        public string Numero { get; private set; }
+        public string UF { get; private set; }
+        public string Cidade { get; private set; }
+        public string Bairro { get; private set; }
+        public string Complemento { get; private set; }
+        public string ObsEndereco { get; private set; }
         public FrmEndereco(FrmCadClient parent)
         {
             InitializeComponent();
@@ -33,20 +42,6 @@ namespace ProjetoDesktop
             {
                 parentForm.Close();
             }
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            string cep = mskCep.Text;
-            string logradouro = txtLogradouro.Text;
-            string numero = txtNumero.Text;
-            string uf = txtUf.Text;
-            string cidade = txtCidade.Text;
-            string bairro = txtBairro.Text;
-            string complemento = txtComplemento.Text;
-            string obs = txtObs.Text;
-
-
         }
 
         public static async Task<Endereco> ObterEnderecoPorCep(string cep)
@@ -112,7 +107,7 @@ namespace ProjetoDesktop
 
         private async void mskCep_TextChanged(object sender, EventArgs e)
         {
-            if(mskCep.Text.Length >= 10)
+            if (mskCep.Text.Length >= 10)
             {
                 string cep = new string(mskCep.Text.Where(char.IsDigit).ToArray());
 
@@ -140,10 +135,31 @@ namespace ProjetoDesktop
 
         private void mskCep_Click(object sender, EventArgs e)
         {
-            if(mskCep.Text.Where(char.IsDigit).ToArray().Length < 1)
+            if (mskCep.Text.Where(char.IsDigit).ToArray().Length < 1)
             {
                 mskCep.SelectionStart = 0;
             }
+        }
+
+        public bool ValidarDados()
+        {
+            if (string.IsNullOrWhiteSpace(mskCep.Text) || string.IsNullOrWhiteSpace(txtLogradouro.Text) || 
+                string.IsNullOrWhiteSpace(txtUf.Text) || string.IsNullOrWhiteSpace(txtCidade.Text) || 
+                string.IsNullOrWhiteSpace(txtBairro.Text))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos obrigatórios.");
+                return false;
+            }
+
+            Cep = mskCep.Text;
+            Logradouro = txtLogradouro.Text;
+            Numero = txtNumero.Text;
+            UF = txtUf.Text;
+            Cidade = txtCidade.Text;
+            Bairro = txtBairro.Text;
+            Complemento = txtComplemento.Text;
+            ObsEndereco = txtObs.Text;
+            return true;
         }
     }
 }
