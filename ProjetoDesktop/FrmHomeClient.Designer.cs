@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.minhaDataGridView = new System.Windows.Forms.DataGridView();
             this.botao_consulta = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,17 +56,17 @@
             this.endereco,
             this.telefone});
             this.minhaDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.minhaDataGridView.Location = new System.Drawing.Point(12, 267);
+            this.minhaDataGridView.Location = new System.Drawing.Point(12, 306);
             this.minhaDataGridView.Name = "minhaDataGridView";
             this.minhaDataGridView.ReadOnly = true;
             this.minhaDataGridView.RowHeadersVisible = false;
             this.minhaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.minhaDataGridView.Size = new System.Drawing.Size(971, 426);
+            this.minhaDataGridView.Size = new System.Drawing.Size(974, 394);
             this.minhaDataGridView.TabIndex = 0;
             // 
             // botao_consulta
             // 
-            this.botao_consulta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.botao_consulta.DefaultCellStyle = dataGridViewCellStyle6;
             this.botao_consulta.FillWeight = 25F;
             this.botao_consulta.HeaderText = "Opções";
             this.botao_consulta.Name = "botao_consulta";
@@ -104,7 +104,7 @@
             this.btnCadastro.ForeColor = System.Drawing.Color.White;
             this.btnCadastro.Location = new System.Drawing.Point(12, 12);
             this.btnCadastro.Name = "btnCadastro";
-            this.btnCadastro.Size = new System.Drawing.Size(205, 34);
+            this.btnCadastro.Size = new System.Drawing.Size(187, 34);
             this.btnCadastro.TabIndex = 1;
             this.btnCadastro.Text = "Cadastrar Cliente";
             this.btnCadastro.UseVisualStyleBackColor = false;
@@ -117,7 +117,7 @@
             this.btnCliCad.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(141)))), ((int)(((byte)(174)))));
             this.btnCliCad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(141)))), ((int)(((byte)(174)))));
             this.btnCliCad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCliCad.Font = new System.Drawing.Font("Segoe UI", 13.5F);
+            this.btnCliCad.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliCad.ForeColor = System.Drawing.Color.White;
             this.btnCliCad.Location = new System.Drawing.Point(805, 12);
             this.btnCliCad.Name = "btnCliCad";
@@ -148,7 +148,7 @@
             this.btnLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLista.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnLista.ForeColor = System.Drawing.Color.White;
-            this.btnLista.Location = new System.Drawing.Point(703, 217);
+            this.btnLista.Location = new System.Drawing.Point(706, 266);
             this.btnLista.Name = "btnLista";
             this.btnLista.Size = new System.Drawing.Size(280, 34);
             this.btnLista.TabIndex = 4;
@@ -161,7 +161,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 234);
+            this.label1.Location = new System.Drawing.Point(7, 273);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(276, 30);

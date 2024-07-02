@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UltimosPet_Animais = new System.Windows.Forms.DataGridView();
+            this.dgvPets = new System.Windows.Forms.DataGridView();
             this.CadastrarPetAnimais = new System.Windows.Forms.Button();
             this.VisualizarL_Animais = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.PetsCadastrados = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.UltimosPet_Animais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPets)).BeginInit();
             this.SuspendLayout();
             // 
-            // UltimosPet_Animais
+            // dgvPets
             // 
-            this.UltimosPet_Animais.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.UltimosPet_Animais.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UltimosPet_Animais.Location = new System.Drawing.Point(12, 306);
-            this.UltimosPet_Animais.Name = "UltimosPet_Animais";
-            this.UltimosPet_Animais.Size = new System.Drawing.Size(974, 394);
-            this.UltimosPet_Animais.TabIndex = 0;
+            this.dgvPets.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.dgvPets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPets.Location = new System.Drawing.Point(12, 306);
+            this.dgvPets.Name = "dgvPets";
+            this.dgvPets.Size = new System.Drawing.Size(974, 394);
+            this.dgvPets.TabIndex = 0;
             // 
             // CadastrarPetAnimais
             // 
@@ -72,7 +72,7 @@
             this.VisualizarL_Animais.Name = "VisualizarL_Animais";
             this.VisualizarL_Animais.Size = new System.Drawing.Size(280, 34);
             this.VisualizarL_Animais.TabIndex = 2;
-            this.VisualizarL_Animais.Text = "Visualizar Lista Completa";
+            this.VisualizarL_Animais.Text = "Visualizar lista completa";
             this.VisualizarL_Animais.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -94,7 +94,7 @@
             this.PetsCadastrados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PetsCadastrados.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PetsCadastrados.ForeColor = System.Drawing.Color.White;
-            this.PetsCadastrados.Location = new System.Drawing.Point(808, 12);
+            this.PetsCadastrados.Location = new System.Drawing.Point(805, 12);
             this.PetsCadastrados.Name = "PetsCadastrados";
             this.PetsCadastrados.Size = new System.Drawing.Size(178, 90);
             this.PetsCadastrados.TabIndex = 4;
@@ -106,13 +106,14 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(141)))), ((int)(((byte)(174)))));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(949, 12);
+            this.label2.Location = new System.Drawing.Point(943, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 39);
+            this.label2.Size = new System.Drawing.Size(40, 47);
             this.label2.TabIndex = 5;
             this.label2.Text = "2";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // TelaAnimais1
             // 
@@ -125,11 +126,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.VisualizarL_Animais);
             this.Controls.Add(this.CadastrarPetAnimais);
-            this.Controls.Add(this.UltimosPet_Animais);
+            this.Controls.Add(this.dgvPets);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaAnimais1";
             this.Text = "TelaAnimais1";
-            ((System.ComponentModel.ISupportInitialize)(this.UltimosPet_Animais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,7 +138,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView UltimosPet_Animais;
+        private System.Windows.Forms.DataGridView dgvPets;
         private System.Windows.Forms.Button CadastrarPetAnimais;
         private System.Windows.Forms.Button VisualizarL_Animais;
         private System.Windows.Forms.Label label1;
