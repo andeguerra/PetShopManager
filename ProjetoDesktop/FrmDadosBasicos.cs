@@ -17,11 +17,6 @@ namespace ProjetoDesktop
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmDadosBasicos_Load(object sender, EventArgs e)
         {
 
@@ -38,6 +33,11 @@ namespace ProjetoDesktop
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

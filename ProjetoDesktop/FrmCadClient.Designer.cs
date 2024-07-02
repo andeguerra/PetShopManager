@@ -35,11 +35,15 @@
             this.pnSelecionado = new System.Windows.Forms.Panel();
             this.pnCadClient = new System.Windows.Forms.Panel();
             this.btnCadastro = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLista
             // 
+            this.btnLista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(141)))), ((int)(((byte)(174)))));
             this.btnLista.FlatAppearance.BorderSize = 0;
             this.btnLista.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(141)))), ((int)(((byte)(174)))));
@@ -48,7 +52,7 @@
             this.btnLista.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.btnLista.ForeColor = System.Drawing.Color.White;
             this.btnLista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLista.Location = new System.Drawing.Point(31, 30);
+            this.btnLista.Location = new System.Drawing.Point(31, 32);
             this.btnLista.Name = "btnLista";
             this.btnLista.Size = new System.Drawing.Size(934, 38);
             this.btnLista.TabIndex = 5;
@@ -58,13 +62,15 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pnSelecionado);
             this.panel1.Controls.Add(this.pnCadClient);
             this.panel1.Controls.Add(this.btnCadastro);
-            this.panel1.Location = new System.Drawing.Point(31, 67);
+            this.panel1.Location = new System.Drawing.Point(31, 71);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(934, 613);
             this.panel1.TabIndex = 6;
@@ -109,6 +115,8 @@
             // 
             // pnCadClient
             // 
+            this.pnCadClient.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnCadClient.BackColor = System.Drawing.Color.White;
             this.pnCadClient.Location = new System.Drawing.Point(17, 60);
             this.pnCadClient.Name = "pnCadClient";
@@ -130,20 +138,31 @@
             this.btnCadastro.UseVisualStyleBackColor = false;
             this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.btnLista);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(998, 712);
+            this.panel2.TabIndex = 0;
+            // 
             // FrmCadClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(998, 712);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnLista);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCadClient";
             this.Text = "FormCadClient";
             this.Load += new System.EventHandler(this.FrmCadClient_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -157,5 +176,6 @@
         private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
