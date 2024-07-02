@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/07/2024 às 10:26
+-- Tempo de geração: 02/07/2024 às 23:25
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -45,10 +45,20 @@ CREATE TABLE `agendamentos` (
 
 CREATE TABLE `clientes` (
   `cliente_id` int(11) NOT NULL,
+  `pessoa` varchar(10) DEFAULT NULL,
   `nome` varchar(100) NOT NULL,
-  `endereco_id` int(11) DEFAULT NULL,
-  `telefone` varchar(15) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `rg` varchar(11) DEFAULT NULL,
+  `endereco_id` int(11) NOT NULL,
+  `celular1` varchar(15) NOT NULL,
+  `celular2` varchar(15) DEFAULT NULL,
+  `telefoneres` varchar(15) DEFAULT NULL,
+  `telefonecom` varchar(15) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
+  `site` varchar(100) DEFAULT NULL,
+  `obsdados` varchar(500) DEFAULT NULL,
+  `osbcontato` varchar(500) DEFAULT NULL,
+  `obsendereco` varchar(500) DEFAULT NULL,
   `fidelidade_pontos` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -95,7 +105,6 @@ CREATE TABLE `endereco` (
   `logradouro` varchar(150) DEFAULT NULL,
   `num` varchar(10) DEFAULT NULL,
   `compl1` varchar(50) DEFAULT NULL,
-  `compl2` varchar(50) DEFAULT NULL,
   `obs` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
