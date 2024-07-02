@@ -52,7 +52,7 @@ namespace ProjetoDesktop
 
         private void AbrirForm(Form formsel, object btnSender)
         {
-            formAtual?.Hide();
+            //formAtual?.Hide();
 
             AtivarBtn(btnSender);
             formAtual = formsel;

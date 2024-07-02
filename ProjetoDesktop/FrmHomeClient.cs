@@ -42,7 +42,7 @@ namespace ProjetoDesktop
         private Form formAtual;
         private void AbrirForm(Form formsel, object btnSender)
         {
-            formAtual?.Close();
+            formAtual?.Hide();
             formAtual = formsel;
             formsel.TopLevel = false;
             formsel.FormBorderStyle = FormBorderStyle.None;

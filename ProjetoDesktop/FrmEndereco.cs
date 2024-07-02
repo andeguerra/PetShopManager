@@ -17,9 +17,16 @@ namespace ProjetoDesktop
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            var dialogRes = MessageBox.Show("Deseja cancelar o cadastro?",
+                "Cancelar cdastro",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (dialogRes == DialogResult.Yes)
+            {
+                
+            }
         }
     }
 }
