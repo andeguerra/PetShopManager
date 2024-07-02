@@ -30,13 +30,13 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCadastro = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.botao_consulta = new System.Windows.Forms.DataGridViewButtonColumn();
             this.minhaDataGridView = new System.Windows.Forms.DataGridView();
+            this.botao_consulta = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCadastro = new System.Windows.Forms.Button();
             this.btnLista = new System.Windows.Forms.Button();
             this.lblCliCad = new System.Windows.Forms.Label();
             this.btnCliCad = new System.Windows.Forms.Button();
@@ -59,67 +59,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(10);
             this.panel1.Size = new System.Drawing.Size(998, 712);
             this.panel1.TabIndex = 6;
-            // 
-            // btnCadastro
-            // 
-            this.btnCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(141)))), ((int)(((byte)(174)))));
-            this.btnCadastro.FlatAppearance.BorderSize = 0;
-            this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastro.ForeColor = System.Drawing.Color.White;
-            this.btnCadastro.Location = new System.Drawing.Point(10, 10);
-            this.btnCadastro.Name = "btnCadastro";
-            this.btnCadastro.Size = new System.Drawing.Size(187, 34);
-            this.btnCadastro.TabIndex = 1;
-            this.btnCadastro.Text = "Cadastrar Cliente";
-            this.btnCadastro.UseVisualStyleBackColor = false;
-            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(5, 270);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(276, 30);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Últimos clientes cadastrados";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // telefone
-            // 
-            this.telefone.FillWeight = 65.65144F;
-            this.telefone.HeaderText = "Telefone";
-            this.telefone.Name = "telefone";
-            this.telefone.ReadOnly = true;
-            // 
-            // endereco
-            // 
-            this.endereco.FillWeight = 65.65144F;
-            this.endereco.HeaderText = "Endereço";
-            this.endereco.Name = "endereco";
-            this.endereco.ReadOnly = true;
-            // 
-            // nome
-            // 
-            this.nome.FillWeight = 65.65144F;
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // botao_consulta
-            // 
-            this.botao_consulta.DefaultCellStyle = dataGridViewCellStyle1;
-            this.botao_consulta.FillWeight = 25F;
-            this.botao_consulta.HeaderText = "Opções";
-            this.botao_consulta.Name = "botao_consulta";
-            this.botao_consulta.ReadOnly = true;
-            this.botao_consulta.Text = "Opções ↓";
-            this.botao_consulta.UseColumnTextForButtonValue = true;
             // 
             // minhaDataGridView
             // 
@@ -144,6 +83,67 @@
             this.minhaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.minhaDataGridView.Size = new System.Drawing.Size(978, 394);
             this.minhaDataGridView.TabIndex = 0;
+            // 
+            // botao_consulta
+            // 
+            this.botao_consulta.DefaultCellStyle = dataGridViewCellStyle1;
+            this.botao_consulta.FillWeight = 25F;
+            this.botao_consulta.HeaderText = "Opções";
+            this.botao_consulta.Name = "botao_consulta";
+            this.botao_consulta.ReadOnly = true;
+            this.botao_consulta.Text = "Opções ↓";
+            this.botao_consulta.UseColumnTextForButtonValue = true;
+            // 
+            // nome
+            // 
+            this.nome.FillWeight = 65.65144F;
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // endereco
+            // 
+            this.endereco.FillWeight = 65.65144F;
+            this.endereco.HeaderText = "Endereço";
+            this.endereco.Name = "endereco";
+            this.endereco.ReadOnly = true;
+            // 
+            // telefone
+            // 
+            this.telefone.FillWeight = 65.65144F;
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(5, 270);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(276, 30);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Últimos clientes cadastrados";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnCadastro
+            // 
+            this.btnCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(141)))), ((int)(((byte)(174)))));
+            this.btnCadastro.FlatAppearance.BorderSize = 0;
+            this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastro.ForeColor = System.Drawing.Color.White;
+            this.btnCadastro.Location = new System.Drawing.Point(10, 10);
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(187, 34);
+            this.btnCadastro.TabIndex = 1;
+            this.btnCadastro.Text = "Cadastrar Cliente";
+            this.btnCadastro.UseVisualStyleBackColor = false;
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
             // btnLista
             // 

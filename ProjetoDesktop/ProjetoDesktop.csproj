@@ -134,6 +134,12 @@
     <Compile Include="FrmEndereco.Designer.cs">
       <DependentUpon>FrmEndereco.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmListaComple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListaComple.Designer.cs">
+      <DependentUpon>FrmListaComple.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEndereco.resx">
       <DependentUpon>FrmEndereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListaComple.resx">
+      <DependentUpon>FrmListaComple.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
