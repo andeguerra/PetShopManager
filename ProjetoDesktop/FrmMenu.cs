@@ -37,10 +37,43 @@ namespace ProjetoDesktop
         private Button btnAtual;
         private Form formAtual;
         List<Form> formsParaFechar = new List<Form>();
+        private bool mouseDown;
+        private Point lastLocation;
         public FrmMenu()
         {
             InitializeComponent();
-            //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+
+            panel2.MouseDown += Panel2_MouseDown;
+            panel2.MouseMove += Panel2_MouseMove;
+            panel2.MouseUp += Panel2_MouseUp;
+        }
+
+        private void Panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        // Evento MouseMove no panel2: Move o formulário enquanto o mouse está pressionado
+        private void Panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                // Calcular nova posição do formulário com base no movimento do mouse relativo ao panel2
+                this.Location = new Point(
+                    this.Location.X + (e.X - lastLocation.X),
+                    this.Location.Y + (e.Y - lastLocation.Y));
+
+                // Atualizar a exibição para um arrastar mais suave (opcional)
+                this.Update();
+            }
+        }
+
+        // Evento MouseUp no panel2: Finaliza o movimento do formulário
+        private void Panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
 
         private void AbrirForm(Form formsel, object btnSender)
@@ -50,7 +83,10 @@ namespace ProjetoDesktop
             formAtual = formsel;
             formsel.TopLevel = false;
             formsel.FormBorderStyle = FormBorderStyle.None;
-            formsel.Dock = DockStyle.Fill;
+            formsel.Dock = DockStyle.None;
+            formsel.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top | AnchorStyles.Bottom;
+            formsel.Location = new Point(0, 0);
+            formsel.Size = pnCentral.Size;
             this.pnCentral.Controls.Add(formsel);
             this.pnCentral.Tag = formsel;
             formsel.BringToFront();
@@ -120,7 +156,8 @@ namespace ProjetoDesktop
 
         private void btnInicio_Click_1(object sender, EventArgs e)
         {
-            // Fecha 
+            AtivarBtn(sender);
+            // Fecha outras janelas já abertas antes
             foreach (Control item in pnCentral.Controls)
             {
                 if (item is Form form)
@@ -141,7 +178,7 @@ namespace ProjetoDesktop
 
         private void btnAnimais_Click(object sender, EventArgs e)
         {
-            AtivarBtn(sender);
+            AbrirForm(new TelaAnimais1(), sender);
         }
 
         private void btnAtendimento_Click(object sender, EventArgs e)
@@ -172,13 +209,11 @@ namespace ProjetoDesktop
                 MessageBoxIcon.Question);
             if (dialogRes == DialogResult.Yes)
             {
-                //Geral.Sair();
-                //FrmLogin tela = new FrmLogin();
-                this.Close();
-                //tela.Show();
+                Geral.Sair();
+                FrmLogin tela = new FrmLogin();
+                this.Hide();
+                tela.Show();
             }
         }
-
-        
     }
 }
