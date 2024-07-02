@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace ProjetoDesktop
 {
     public partial class FrmEndereco : Form
     {
-        public FrmEndereco()
+        private FrmCadClient parentForm;
+        public FrmEndereco(FrmCadClient parent)
         {
             InitializeComponent();
+            parentForm = parent;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -25,7 +28,7 @@ namespace ProjetoDesktop
                 MessageBoxIcon.Question);
             if (dialogRes == DialogResult.Yes)
             {
-                
+                parentForm.Close();
             }
         }
     }

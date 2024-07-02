@@ -12,34 +12,24 @@ namespace ProjetoDesktop
 {
     public partial class FrmDadosBasicos : Form
     {
-        public FrmDadosBasicos()
+        private FrmCadClient parentForm;
+
+        public FrmDadosBasicos(FrmCadClient parent)
         {
             InitializeComponent();
+            parentForm = parent;
         }
 
-        private void FrmDadosBasicos_Load(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            var dialogRes = MessageBox.Show("Deseja cancelar o cadastro?",
+                "Cancelar cdastro",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+            if (dialogRes == DialogResult.Yes)
+            {
+                parentForm.Close();
+            }
         }
     }
 }

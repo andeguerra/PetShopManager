@@ -57,7 +57,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(283, 25);
             this.textBox2.TabIndex = 25;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -69,7 +68,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(188, 25);
             this.textBox1.TabIndex = 24;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label6
             // 
@@ -82,7 +80,6 @@
             this.label6.Size = new System.Drawing.Size(66, 25);
             this.label6.TabIndex = 22;
             this.label6.Text = "E-mail";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -93,7 +90,6 @@
             this.label7.Size = new System.Drawing.Size(87, 25);
             this.label7.TabIndex = 21;
             this.label7.Text = "Celular 1";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // textBox4
             // 
@@ -105,7 +101,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(188, 25);
             this.textBox4.TabIndex = 28;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label1
             // 
@@ -116,7 +111,6 @@
             this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 27;
             this.label1.Text = "Celular 2";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox3
             // 
@@ -128,7 +122,6 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(188, 25);
             this.textBox3.TabIndex = 32;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label2
             // 
@@ -139,7 +132,6 @@
             this.label2.Size = new System.Drawing.Size(173, 25);
             this.label2.TabIndex = 31;
             this.label2.Text = "Telefone Comercial";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox5
             // 
@@ -151,7 +143,6 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(188, 25);
             this.textBox5.TabIndex = 30;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label3
             // 
@@ -162,7 +153,6 @@
             this.label3.Size = new System.Drawing.Size(182, 25);
             this.label3.TabIndex = 29;
             this.label3.Text = "Telefone Residêncial";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox6
             // 
@@ -173,7 +163,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(283, 25);
             this.textBox6.TabIndex = 34;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label4
             // 
@@ -186,7 +175,6 @@
             this.label4.Size = new System.Drawing.Size(43, 25);
             this.label4.TabIndex = 33;
             this.label4.Text = "Site";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnSalvar
             // 
@@ -203,7 +191,6 @@
             this.btnSalvar.TabIndex = 38;
             this.btnSalvar.Text = "✓ Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnCancelar
             // 
@@ -220,7 +207,7 @@
             this.btnCancelar.TabIndex = 37;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // textBox7
             // 
@@ -231,7 +218,6 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(787, 104);
             this.textBox7.TabIndex = 36;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label8
             // 
@@ -242,7 +228,6 @@
             this.label8.Size = new System.Drawing.Size(119, 25);
             this.label8.TabIndex = 35;
             this.label8.Text = "Observações";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // panel1
             // 

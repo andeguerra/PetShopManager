@@ -9,11 +9,12 @@ namespace ProjetoDesktop
     {
         private Button btnAtual;
         private Form formAtual;
-        private Dictionary<string, Form> formCache = new Dictionary<string, Form>();
+        private Dictionary<string, Form> formsCache;
 
         public FrmCadClient()
         {
             InitializeComponent();
+            formsCache = new Dictionary<string, Form>();
         }
 
         private void AtivarBtn(object btnSender)
@@ -22,15 +23,13 @@ namespace ProjetoDesktop
             {
                 Button novoBtn = (Button)btnSender;
 
-                // Restaura o tamanho do botão anterior, se houver um botão atual diferente do novo botão clicado
                 if (btnAtual != null && btnAtual != novoBtn)
                 {
                     btnAtual.Size = new System.Drawing.Size(149, 41);
                 }
 
-                // Ativa o novo botão
                 btnAtual = novoBtn;
-                btnAtual.Size = new System.Drawing.Size(149, 35); // Define o novo tamanho desejado
+                btnAtual.Size = new System.Drawing.Size(149, 35);
                 pnSelecionado.Location = new Point(btnAtual.Location.X, 54);
             }
         }
@@ -49,54 +48,63 @@ namespace ProjetoDesktop
 
         private void AbrirForm(Form formsel, object btnSender)
         {
-            formAtual?.Hide();
+            if (formAtual != null)
+            {
+                formAtual.Hide();
+            }
 
             AtivarBtn(btnSender);
 
-            string formKey = formsel.GetType().Name;
-
-            if (!formCache.ContainsKey(formKey))
+            if (formsel != null)
             {
+                formAtual = formsel;
                 formsel.TopLevel = false;
                 formsel.FormBorderStyle = FormBorderStyle.None;
                 formsel.Dock = DockStyle.Fill;
                 this.pnCadClient.Controls.Add(formsel);
                 this.pnCadClient.Tag = formsel;
-                formCache[formKey] = formsel;
+                formsel.BringToFront();
+                formsel.Show();
             }
+        }
 
-            formAtual = formCache[formKey];
-            formAtual.BringToFront();
-            formAtual.Show();
+        private void AbrirOuCriarForm(string formName, Func<Form> formFactory, object btnSender)
+        {
+            if (!formsCache.ContainsKey(formName))
+            {
+                var form = formFactory();
+                formsCache[formName] = form;
+            }
+            AbrirForm(formsCache[formName], btnSender);
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
-            DesativarBtn(); // Restaura o tamanho do botão anterior
+            DesativarBtn();
             AtivarBtn(sender);
-            AbrirForm(new FrmDadosBasicos(), sender);
+            AbrirOuCriarForm("FrmDadosBasicos", () => new FrmDadosBasicos(this), sender);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DesativarBtn(); // Restaura o tamanho do botão anterior
+            DesativarBtn();
             AtivarBtn(sender);
-            AbrirForm(new FrmContatos(), sender);
+            AbrirOuCriarForm("FrmContatos", () => new FrmContatos(this), sender);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DesativarBtn(); // Restaura o tamanho do botão anterior
+            DesativarBtn();
             AtivarBtn(sender);
-            AbrirForm(new FrmEndereco(), sender);
+            AbrirOuCriarForm("FrmEndereco", () => new FrmEndereco(this), sender);
         }
 
         private void FrmCadClient_Load(object sender, EventArgs e)
         {
+            btnCadastro_Click(btnCadastro, EventArgs.Empty);
             btnAtual = btnCadastro;
-            btnAtual.Size = new Size(149, 35); // Define o tamanho desejado para o botão atual
+            btnAtual.Size = new Size(149, 35);
             pnSelecionado.Location = new Point(btnAtual.Location.X, 54);
-            AbrirForm(new FrmDadosBasicos(), btnCadastro);
         }
     }
 }

@@ -59,7 +59,6 @@
             this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pessoa";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
@@ -153,7 +152,6 @@
             this.label7.Size = new System.Drawing.Size(63, 25);
             this.label7.TabIndex = 11;
             this.label7.Text = "Nome";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label4
             // 
@@ -165,7 +163,6 @@
             this.label4.Size = new System.Drawing.Size(36, 25);
             this.label4.TabIndex = 15;
             this.label4.Text = "RG";
-            this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // label8
             // 
@@ -214,7 +211,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(787, 104);
             this.textBox4.TabIndex = 21;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // btnCancelar
             // 
@@ -231,6 +227,7 @@
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
@@ -286,7 +283,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDadosBasicos";
             this.Text = "FrmDadosBasicos";
-            this.Load += new System.EventHandler(this.FrmDadosBasicos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
