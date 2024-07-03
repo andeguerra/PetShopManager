@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -154,12 +156,31 @@ namespace ProjetoDesktop
                 string site = ((FrmContatos)formsCache["FrmContatos"]).SiteUrl;
                 string obsContato = ((FrmContatos)formsCache["FrmContatos"]).ObsContato;
 
-                // Aqui você pode executar a instrução SQL de insert com os dados obtidos
-                // Exemplo:
-                // string query = $"INSERT INTO Tabela (Nome, Idade, Rua, Cidade, Telefone, Email) " +
-                //                $"VALUES ('{nomeCliente}', {idadeCliente}, '{rua}', '{cidade}', " +
-                //                $"'{telefone}', '{email}')";
-                // Execute a query no seu banco de dados
+                // Iniciando a conexão e abrindo transação
+                try
+                {
+                    Conexao.Conectar();
+
+                    using (MySqlTransaction transaction = Conexao.conn.BeginTransaction())
+                    {
+                        try
+                        {
+                            string sql = "INSERT INTO ";
+                            MySqlCommand cmd = new MySqlCommand(sql, Conexao.conn, transaction);
+
+
+                                
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
 
                 MessageBox.Show("Dados salvos com sucesso!");
             }
