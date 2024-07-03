@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/07/2024 às 23:25
+-- Tempo de geração: 03/07/2024 às 23:08
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -57,10 +57,16 @@ CREATE TABLE `clientes` (
   `email` varchar(100) DEFAULT NULL,
   `site` varchar(100) DEFAULT NULL,
   `obsdados` varchar(500) DEFAULT NULL,
-  `osbcontato` varchar(500) DEFAULT NULL,
-  `obsendereco` varchar(500) DEFAULT NULL,
+  `obscontato` varchar(500) DEFAULT NULL,
   `fidelidade_pontos` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `clientes`
+--
+
+INSERT INTO `clientes` (`cliente_id`, `pessoa`, `nome`, `cpf`, `rg`, `endereco_id`, `celular1`, `celular2`, `telefoneres`, `telefonecom`, `email`, `site`, `obsdados`, `obscontato`, `fidelidade_pontos`) VALUES
+(1, 'teste', 'teste', 'teste', 'teste', 6, '(  ) 1     -', '(  )       -1', '(  )       -  1', '(  )       -   ', 'teste', 'teste', 'teste', 'teste', 0);
 
 -- --------------------------------------------------------
 
@@ -107,6 +113,13 @@ CREATE TABLE `endereco` (
   `compl1` varchar(50) DEFAULT NULL,
   `obs` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `endereco`
+--
+
+INSERT INTO `endereco` (`endereco_id`, `cep`, `uf`, `cidade`, `bairro`, `logradouro`, `num`, `compl1`, `obs`) VALUES
+(6, '12.221-190', 'SP', 'São José dos Campos', 'Jardim São Jorge', 'Rua Cristóvão de Alencar', 'teste', '', 'teste');
 
 -- --------------------------------------------------------
 
@@ -466,7 +479,7 @@ ALTER TABLE `agendamentos`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `contas_pagar_receber`
@@ -484,7 +497,7 @@ ALTER TABLE `descontos`
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `endereco_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `endereco_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `especie_pet`
@@ -586,7 +599,7 @@ ALTER TABLE `agendamentos`
 -- Restrições para tabelas `clientes`
 --
 ALTER TABLE `clientes`
-  ADD CONSTRAINT `clientes_ibfk_1` FOREIGN KEY (`endereco_id`) REFERENCES `endereco` (`endereco_id`);
+  ADD CONSTRAINT `fk_endereco` FOREIGN KEY (`endereco_id`) REFERENCES `endereco` (`endereco_id`);
 
 --
 -- Restrições para tabelas `itens_venda`

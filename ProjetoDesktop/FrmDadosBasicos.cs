@@ -51,9 +51,9 @@ namespace ProjetoDesktop
                 return false;
             }
 
-            Pessoa = cbPessoa.SelectedValue.ToString();
-            Situação = cbPessoa.SelectedValue.ToString();
-            ICMS = cbICMS.SelectedValue.ToString();
+            Pessoa = cbPessoa.Text;
+            Situação = cbPessoa.Text;
+            ICMS = cbICMS.Text;
             Data = dtpData.Value;
             Nome = txtNome.Text;
             CPF = txtCPF.Text;

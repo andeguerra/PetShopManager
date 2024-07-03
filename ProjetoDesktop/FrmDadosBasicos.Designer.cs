@@ -63,6 +63,9 @@
             this.cbPessoa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbPessoa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPessoa.FormattingEnabled = true;
+            this.cbPessoa.Items.AddRange(new object[] {
+            "Física",
+            "Jurídica"});
             this.cbPessoa.Location = new System.Drawing.Point(59, 92);
             this.cbPessoa.Name = "cbPessoa";
             this.cbPessoa.Size = new System.Drawing.Size(128, 25);
@@ -72,6 +75,9 @@
             // 
             this.cbSituacao.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSituacao.FormattingEnabled = true;
+            this.cbSituacao.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
             this.cbSituacao.Location = new System.Drawing.Point(222, 92);
             this.cbSituacao.Name = "cbSituacao";
             this.cbSituacao.Size = new System.Drawing.Size(128, 25);
@@ -92,6 +98,9 @@
             this.cbICMS.BackColor = System.Drawing.Color.White;
             this.cbICMS.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbICMS.FormattingEnabled = true;
+            this.cbICMS.Items.AddRange(new object[] {
+            "Contribuente",
+            "Isento"});
             this.cbICMS.Location = new System.Drawing.Point(383, 92);
             this.cbICMS.Name = "cbICMS";
             this.cbICMS.Size = new System.Drawing.Size(128, 25);

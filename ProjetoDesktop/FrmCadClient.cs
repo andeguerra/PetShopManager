@@ -123,13 +123,15 @@ namespace ProjetoDesktop
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            // Recebendo confirmação de validade das funções nos formulários de cadastro
             bool dadosBasicosValidos = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).ValidarDados();
             bool enderecoValido = ((FrmEndereco)formsCache["FrmEndereco"]).ValidarDados();
             bool contatosValidos = ((FrmContatos)formsCache["FrmContatos"]).ValidarDados();
 
             if (dadosBasicosValidos && enderecoValido && contatosValidos)
             {
-                // Aqui você pode acessar os dados de cada formulário
+                // Executando código para receber as informações dos formulários
+                // Dados básicos
                 string pessoa = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).Pessoa;
                 string situacao = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).Situação;
                 string icms = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).ICMS;
@@ -139,15 +141,17 @@ namespace ProjetoDesktop
                 string rg = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).RG;
                 string obsDados = ((FrmDadosBasicos)formsCache["FrmDadosBasicos"]).ObsDadosBasicos;
 
+                // Dados de endereço
                 string cep = ((FrmEndereco)formsCache["FrmEndereco"]).Cep;
-                string logradouro = ((FrmEndereco)formsCache["FrmEndereco"]).Logradouro;
-                string numero = ((FrmEndereco)formsCache["FrmEndereco"]).Numero;
                 string uf = ((FrmEndereco)formsCache["FrmEndereco"]).UF;
                 string cidade = ((FrmEndereco)formsCache["FrmEndereco"]).Cidade;
                 string bairro = ((FrmEndereco)formsCache["FrmEndereco"]).Bairro;
+                string logradouro = ((FrmEndereco)formsCache["FrmEndereco"]).Logradouro;
+                string numero = ((FrmEndereco)formsCache["FrmEndereco"]).Numero;
                 string complemento = ((FrmEndereco)formsCache["FrmEndereco"]).Complemento;
                 string obsEndereco = ((FrmEndereco)formsCache["FrmEndereco"]).ObsEndereco;
 
+                // Dados de contato
                 string celular1 = ((FrmContatos)formsCache["FrmContatos"]).Celular1;
                 string celular2 = ((FrmContatos)formsCache["FrmContatos"]).Celular2;
                 string email = ((FrmContatos)formsCache["FrmContatos"]).Email;
@@ -156,7 +160,7 @@ namespace ProjetoDesktop
                 string site = ((FrmContatos)formsCache["FrmContatos"]).SiteUrl;
                 string obsContato = ((FrmContatos)formsCache["FrmContatos"]).ObsContato;
 
-                // Iniciando a conexão e abrindo transação
+                // Iniciando a conexão e abrindo transação com banco de dados
                 try
                 {
                     Conexao.Conectar();
@@ -165,24 +169,73 @@ namespace ProjetoDesktop
                     {
                         try
                         {
-                            string sql = "INSERT INTO ";
-                            MySqlCommand cmd = new MySqlCommand(sql, Conexao.conn, transaction);
+                            // Inserindo dados na tabela de Endereços
+                            string sql1 = "INSERT INTO endereco(cep, uf, cidade, bairro, logradouro, num, compl1, obs) " +
+                                "VALUES(@cep, @uf, @cidade, @bairro, @logradouro, @num, @compl1, @obs);";
+                            MySqlCommand cmdEndereco = new MySqlCommand(sql1, Conexao.conn, transaction);
 
+                            cmdEndereco.Parameters.AddWithValue("@cep", cep);
+                            cmdEndereco.Parameters.AddWithValue("@uf", uf);
+                            cmdEndereco.Parameters.AddWithValue("@cidade", cidade);
+                            cmdEndereco.Parameters.AddWithValue("@bairro", bairro);
+                            cmdEndereco.Parameters.AddWithValue("@logradouro", logradouro);
+                            cmdEndereco.Parameters.AddWithValue("@num", numero);
+                            cmdEndereco.Parameters.AddWithValue("@compl1", complemento);
+                            cmdEndereco.Parameters.AddWithValue("@obs", obsEndereco);
 
-                                
+                            cmdEndereco.ExecuteNonQuery();
+                            int enderecoId = (int)cmdEndereco.LastInsertedId; // Corrigido para pegar o último ID inserido
+
+                            // Inserindo dados na tabela de Clientes
+                            string sql2 = "INSERT INTO clientes(pessoa, nome, cpf, rg, celular1, celular2, telefoneres, telefonecom, email, site, obsdados, obscontato, fidelidade_pontos, endereco_id) " +
+                                "VALUES(@pessoa, @nome, @cpf, @rg, @celular1, @celular2, @telefoneres, @telefonecom, @email, @site, @obsdados, @obscontato, @fidelidade_pontos, @endereco_id);";
+
+                            MySqlCommand cmdClientes = new MySqlCommand(sql2, Conexao.conn, transaction);
+
+                            cmdClientes.Parameters.AddWithValue("@pessoa", pessoa);
+                            cmdClientes.Parameters.AddWithValue("@nome", nome);
+                            cmdClientes.Parameters.AddWithValue("@cpf", cpf);
+                            cmdClientes.Parameters.AddWithValue("@rg", rg);
+                            cmdClientes.Parameters.AddWithValue("@celular1", celular1);
+                            cmdClientes.Parameters.AddWithValue("@celular2", celular2);
+                            cmdClientes.Parameters.AddWithValue("@telefoneres", telRes);
+                            cmdClientes.Parameters.AddWithValue("@telefonecom", telCom);
+                            cmdClientes.Parameters.AddWithValue("@email", email);
+                            cmdClientes.Parameters.AddWithValue("@site", site);
+                            cmdClientes.Parameters.AddWithValue("@obsdados", obsDados);
+                            cmdClientes.Parameters.AddWithValue("@obscontato", obsContato);
+                            cmdClientes.Parameters.AddWithValue("@fidelidade_pontos", 0);
+                            cmdClientes.Parameters.AddWithValue("@endereco_id", enderecoId); // Adicionando o ID do endereço
+
+                            cmdClientes.ExecuteNonQuery();
+
+                            transaction.Commit();
+
+                            MessageBox.Show("Dados salvos com sucesso.");
                         }
                         catch (Exception ex)
                         {
-
+                            // Em caso de erro, desfaz a transação
+                            try
+                            {
+                                transaction.Rollback();
+                            }
+                            catch (Exception rollbackEx)
+                            {
+                                MessageBox.Show("Erro ao tentar reverter a transação: " + rollbackEx.Message);
+                            }
+                            MessageBox.Show("Erro ao inserir dados: " + ex.Message);
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (MySqlException sqlEx)
                 {
-
+                    MessageBox.Show("Erro ao tentar salvar os dados: " + sqlEx.Message);
                 }
-
-                MessageBox.Show("Dados salvos com sucesso!");
+                finally
+                {
+                    Conexao.Desconectar();
+                }
             }
             else
             {
